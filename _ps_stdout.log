@@ -1,0 +1,10 @@
+OK
+PY_VER=3.10.9
+EXE=C:\ai-engineer\venv_bnsp\Scripts\python.exe
+OK_NUMPY=1.26.4
+ERR_PANDAS=ModuleNotFoundError: No module named 'pandas'
+ERR_MATPLOTLIB=ModuleNotFoundError: No module named 'matplotlib'
+ERR_SEABORN=ModuleNotFoundError: No module named 'seaborn'
+ERR_SKLEARN=ModuleNotFoundError: No module named 'sklearn'
+ERR_SCIPY=ModuleNotFoundError: No module named 'scipy'
+ERR_JOBLIB=ModuleNotFoundError: No module named 'joblib'

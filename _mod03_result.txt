@@ -1,0 +1,25 @@
+START 2026-09-16 04:16:58
+PY=C:\ai-engineer\venv_bnsp\Scripts\python.exe
+NUMPY_OK=1.26.4  PANDAS_OK=2.2.1
+ABOUT TO EXEC SCRIPT: c:\ai-engineer\modul_03_data_prep\01_data_understanding_cleaning.py
+EXEC_FINISHED RC=2
+==== STDOUT/STDERR CAPTURED BELOW ====
+
+==== EXCEPTION ====
+Traceback (most recent call last):
+  File "c:\ai-engineer\modul_03_data_prep\01_data_understanding_cleaning.py", line 7, in <module>
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+AttributeError: 'Dup' object has no attribute 'reconfigure'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\ai-engineer\_run_mod03_SAFE.py", line 49, in <module>
+    exec(compile(code, SCRIPT, "exec"), {"__name__": "__main__", "__file__": SCRIPT})
+  File "c:\ai-engineer\modul_03_data_prep\01_data_understanding_cleaning.py", line 10, in <module>
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True)
+AttributeError: 'Dup' object has no attribute 'buffer'
+
+==== END CAPTURE ====
+FINISH 2026-09-16 04:17:01
+APPEND_VERIFY_OK

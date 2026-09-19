@@ -1,0 +1,54 @@
+======================================================================
+VERIFIKASI VENV_BNSP - 2026-09-19 11:12:37
+======================================================================
+
+1. CEK DIRECTORY Scripts: c:\ai-engineer\venv_bnsp\Scripts
+   ✅ ADA. Total 26 file. File penting:
+        - Activate.ps1                           24167 bytes
+        - activate                                2074 bytes
+        - activate.bat                            1003 bytes
+        - pip.exe                               108402 bytes
+        - pip3.10.exe                           108402 bytes
+        - pip3.exe                              108402 bytes
+        - python.exe                            266624 bytes
+        - pythonw.exe                           254848 bytes
+
+2. CEK FILE PENTING:
+   ✅ python.exe         ADA (266,624 bytes) -> c:\ai-engineer\venv_bnsp\Scripts\python.exe
+   ✅ pip.exe            ADA (108,402 bytes) -> c:\ai-engineer\venv_bnsp\Scripts\pip.exe
+   ✅ activate.bat       ADA (1,003 bytes) -> c:\ai-engineer\venv_bnsp\Scripts\activate.bat
+   ✅ Activate.ps1       ADA (24,167 bytes) -> c:\ai-engineer\venv_bnsp\Scripts\Activate.ps1
+
+3. JALANKAN PYTHON VERSION:
+   EXIT=0
+   STDOUT: Python 3.10.9
+   STDERR: 
+
+4. JALANKAN PIP LIST (paket inti saja):
+   EXIT=0
+   Package            Version
+   ------------------ ------------
+   joblib             1.4.2
+   matplotlib         3.8.4
+   matplotlib-inline  0.2.2
+   numpy              1.26.4
+   openpyxl           3.1.2
+   pandas             2.2.1
+   pillow             10.3.0
+   pip                22.3.1
+   scikit-learn       1.4.2
+   scipy              1.12.0
+   seaborn            0.13.2
+   setuptools         65.5.0
+   STDERR: [notice] A new release of pip available: 22.3.1 -> 26.2.1
+[notice] To update, run: c:\ai-engineer\venv_bnsp\Scripts\python.exe -m pip install --upgrade pip
+
+5. TEST IMPORT PACKAGE via subprocess venv_python:
+   EXIT=1
+   File "<string>", line 1
+       import sys;print('PYEXE='+sys.executable);import numpy; print('numpy='+numpy.__version__);import pandas; print('pandas='+pandas.__version__);try:
+                                                                                                                                                    ^^^
+   SyntaxError: invalid syntax
+
+======================================================================
+SELESAI - 2026-09-19 11:12:55

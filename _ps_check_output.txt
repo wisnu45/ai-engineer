@@ -1,0 +1,10 @@
+OK
+PY_VER=3.10.9
+EXE=C:\ai-engineer\venv_bnsp\Scripts\python.exe
+OK_NUMPY=1.26.4
+OK_PANDAS=2.2.1
+OK_MATPLOTLIB=3.8.4
+OK_SEABORN=0.13.2
+OK_SKLEARN=1.4.2
+OK_SCIPY=1.12.0
+OK_JOBLIB=1.4.2

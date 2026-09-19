@@ -1,0 +1,10 @@
+Collecting pandas==2.2.1
+  Downloading pandas-2.2.1-cp310-cp310-win_amd64.whl (11.6 MB)
+     ---------------------------------------- 11.6/11.6 MB 3.8 MB/s eta 0:00:00
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\ai-engineer\venv_bnsp\lib\site-packages (from pandas==2.2.1) (2.9.0.post0)
+Requirement already satisfied: tzdata>=2022.7 in c:\ai-engineer\venv_bnsp\lib\site-packages (from pandas==2.2.1) (2026.4)
+Requirement already satisfied: pytz>=2020.1 in c:\ai-engineer\venv_bnsp\lib\site-packages (from pandas==2.2.1) (2026.3.post1)
+Requirement already satisfied: numpy<2,>=1.22.4 in c:\ai-engineer\venv_bnsp\lib\site-packages (from pandas==2.2.1) (1.26.4)
+Requirement already satisfied: six>=1.5 in c:\ai-engineer\venv_bnsp\lib\site-packages (from python-dateutil>=2.8.2->pandas==2.2.1) (1.17.0)
+Installing collected packages: pandas
+Successfully installed pandas-2.2.1

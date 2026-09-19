@@ -1,0 +1,183 @@
+LAUNCHER_START_V2 2026-09-16 04:19:06
+PY=C:\ai-engineer\venv_bnsp\Scripts\python.exe
+IMPORT_OK numpy=1.26.4 pandas=2.2.1
+============================================================
+MODUL 3: DATA PREPARATION & PREPROCESSING
+Bagian 1: Data Understanding & Data Cleaning
+============================================================
+
+┌─────────────────────────────────────────────────────────────────┐
+│          TAHAPAN DATA PREPARATION (KRUSIAL DI AI!)             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  1. DATA UNDERSTANDING → Pahami struktur & karakteristik data  │
+│  2. DATA CLEANING      → Bersihkan: null, duplikat, outlier    │
+│  3. DATA TRANSFORMATION→ Ubah format: encoding, scaling,       │
+│  4. FEATURE ENGINEERING→ Buat fitur baru dari yang ada         │
+│  5. EDA                → Visual eksplorasi pola & insight      │
+│  6. DATA SPLITTING     → Train / Validation / Test set         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+
+>>> 1. MEMBUAT DATASET DENGAN MASALAH (untuk latihan cleaning)
+------------------------------------------------------------
+Shape awal: (15, 11)
+
+Data mentah (15 baris pertama):
+    ID            Nama   Umur        Gaji Jenis_Kelamin Pendidikan        Kota Tanggal_Daftar  Pengalaman_Thn Status_Nikah Churn
+0    1    Andi Pratama   28.0   8500000.0             L         S1     Jakarta     2022-01-15             3.0        Belum     0
+1    2    Budi Santoso   32.0  12000000.0             L         S1     Bandung     2021/06/20             5.0          NaN     0
+2    3      citra dewi   25.0   7000000.0             P         D3    surabaya            NaN             1.0        Belum     1
+3    4  Dewi Anggraeni    NaN  15000000.0             P         S2     Jakarta     2019-03-10            10.0        Kawin     0
+4    5      Eko Wijaya   -5.0   9500000.0             L         S1     Bandung     2022-08-05             4.0        Belum     0
+5    6    Fani Hidayat   40.0  20000000.0             L         S2     Jakarta     2015-12-01             NaN        Kawin     0
+6    7    Gita Permata   30.0  10500000.0             P         S1    Surabaya     2021-04-18             3.0        Belum     1
+7    8    Andi Pratama   28.0   8500000.0             L         S1     Jakarta     2022-01-15             3.0        Belum     0
+8    9  Hendra Gunawan   35.0  99999999.0             L         S3  Yogyakarta     2018-09-22             8.0        Kawin     0
+9   10    Inge Lestari   29.0         NaN             P         S1    Semarang     2023-02-14             2.0        Belum     1
+10  11     Joko Susilo  200.0  11000000.0             L         S1         NaN     2022-11-30             4.0        Kawin   NaN
+11  12    Kartika Sari   33.0  13500000.0             P         S2     Bandung     2020-07-08             6.0          NaN   NaN
+12  13    Lukman Hakim   38.0         NaN             L         D4       Medan     2017-05-03             9.0        Kawin     0
+13  14      Maya Putri   27.0   7800000.0             P         D3    surabaya     2023-01-20             NaN        Belum     1
+14  15     Nanda Putra   31.0  11500000.0             L         S1     Jakarta     2021-10-12             4.0        Kawin     0
+
+>>> 2. DATA UNDERSTANDING - Inspeksi Awal
+------------------------------------------------------------
+
+Informasi kolom & null:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 15 entries, 0 to 14
+Data columns (total 11 columns):
+ #   Column          Non-Null Count  Dtype  
+---  ------          --------------  -----  
+ 0   ID              15 non-null     int64  
+ 1   Nama            15 non-null     object 
+ 2   Umur            14 non-null     float64
+ 3   Gaji            13 non-null     float64
+ 4   Jenis_Kelamin   15 non-null     object 
+ 5   Pendidikan      15 non-null     object 
+ 6   Kota            14 non-null     object 
+ 7   Tanggal_Daftar  14 non-null     object 
+ 8   Pengalaman_Thn  13 non-null     float64
+ 9   Status_Nikah    13 non-null     object 
+ 10  Churn           13 non-null     object 
+dtypes: float64(3), int64(1), object(7)
+memory usage: 1.4+ KB
+
+
+Persentase missing value per kolom:
+                Jumlah_Null  Persentase_%
+Umur                      1          6.67
+Gaji                      2         13.33
+Kota                      1          6.67
+Tanggal_Daftar            1          6.67
+Pengalaman_Thn            2         13.33
+Status_Nikah              2         13.33
+Churn                     2         13.33
+
+>>> 3. DATA CLEANING - Tahapan 1: Hapus Duplikat
+------------------------------------------------------------
+Jumlah baris duplikat (berdasarkan semua kolom): 0
+Jumlah duplikat berdasarkan ID: 0
+Jumlah duplikat berdasarkan Nama+Umur+Gaji: 1
+Shape setelah hapus duplikat: (14, 11)
+
+>>> 4. DATA CLEANING - Tahapan 2: Perbaiki Format Data
+------------------------------------------------------------
+Sebelum perbaikan:
+  Nama: ['Andi Pratama', 'Budi Santoso', 'citra dewi', 'Dewi Anggraeni', 'Eko Wijaya']
+  Kota: ['Jakarta', 'Bandung', 'surabaya', 'Jakarta', 'Bandung']
+  Jenis_Kelamin: ['L' 'P']
+
+Setelah perbaikan:
+  Nama: ['Andi Pratama', 'Budi Santoso', 'Citra Dewi', 'Dewi Anggraeni', 'Eko Wijaya']
+  Kota: ['Jakarta', 'Bandung', 'Surabaya', 'Jakarta', 'Bandung']
+  Jenis_Kelamin: ['Laki-laki' 'Perempuan']
+  Tanggal_Daftar dtype: datetime64[ns]
+
+>>> 5. DATA CLEANING - Tahapan 3: Handling Invalid Data
+------------------------------------------------------------
+Nilai invalid terdeteksi:
+  Umur min: -5.0, max: 200.0
+  Gaji  max: 99,999,999.0
+  Pengalaman_Thn max: 10.0
+
+Baris Umur invalid: 3
+Baris Gaji invalid: 3
+
+Setelah penandaan invalid → NaN:
+  Umur null: 3
+  Gaji null: 3
+
+>>> 6. DATA CLEANING - Tahapan 4: Handling Missing Values
+------------------------------------------------------------
+
+STRATEGI HANDLING MISSING VALUE:
+  • DROP    → Jika <5% baris hilang atau kolom >50% null
+  • IMPUTE  → Ganti dengan nilai yang masuk akal
+     - Numerical: Mean / Median / Mode / Konstanta
+     - Categorical: Mode / "Unknown" / Konstanta
+  • FORWARD/BACKWARD FILL → Untuk time series
+  • MODEL-BASED → KNN Imputer, MICE (lebih canggih)
+
+Sebelum impute:
+  Status_Nikah null: 2
+  Pendidikan null: 0
+C:\ai-engineer\venv_bnsp\lib\site-packages\numpy\lib\nanfunctions.py:1215: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+C:\ai-engineer\venv_bnsp\lib\site-packages\numpy\lib\nanfunctions.py:1215: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+C:\ai-engineer\venv_bnsp\lib\site-packages\numpy\lib\nanfunctions.py:1215: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+
+Setelah impute:
+  Total null tersisa: 0
+  Shape: (14, 11)
+
+Data bersih final:
+              Nama  Umur        Gaji     Status_Nikah        Kota  Pengalaman_Thn
+0     Andi Pratama  28.0   8500000.0            Belum     Jakarta             3.0
+1     Budi Santoso  32.0  12000000.0  Tidak_Diketahui     Bandung             5.0
+2       Citra Dewi  25.0   7000000.0            Belum    Surabaya             1.0
+3   Dewi Anggraeni  36.5  15000000.0            Kawin     Jakarta            10.0
+4       Eko Wijaya  30.0   9500000.0            Belum     Bandung             4.0
+5     Fani Hidayat  40.0  20000000.0            Kawin     Jakarta             4.0
+6     Gita Permata  30.0  10500000.0            Belum    Surabaya             3.0
+7   Hendra Gunawan  35.0  11000000.0            Kawin  Yogyakarta             8.0
+8     Inge Lestari  29.0  11000000.0            Belum    Semarang             2.0
+9      Joko Susilo  30.0  11000000.0            Kawin     Jakarta             4.0
+10    Kartika Sari  33.0  13500000.0  Tidak_Diketahui     Bandung             6.0
+11    Lukman Hakim  38.0  11000000.0            Kawin       Medan             9.0
+12      Maya Putri  27.0   7800000.0            Belum    Surabaya             4.0
+13     Nanda Putra  31.0  11500000.0            Kawin     Jakarta             4.0
+
+>>> 7. HANDLING OUTLIER - IQR Method & Z-Score
+------------------------------------------------------------
+Sebelum outlier handling - Gaji:
+  Q1: 9,750,000.0 | Q3: 11,875,000.0 | IQR: 2,125,000.0
+  Batas bawah: 6,562,500.0 | Batas atas: 15,062,500.0
+  Jumlah outlier Gaji: 1
+
+Z-Score Method untuk Pengalaman_Thn:
+  Z-Score > 3  : 0 baris
+  Z-Score max  : 2.000
+
+>>> LATIHAN MANDIRI:
+------------------------------------------------------------
+
+1. Drop kolom yang memiliki null >70% (jika ada)
+2. Buat fungsi reusable bernama 'bersihkan_dataframe()'
+   yang melakukan:
+   - Drop duplikat
+   - Title case kolom string
+   - Replace placeholder (?, -, N/A) → NaN
+   - Impute numerik dengan median
+   - Impute kategorik dengan mode
+3. Uji fungsi tersebut pada dataset baru dengan 30% null random
+
+
+✓ Bagian 1 Modul 3 Selesai: Data Understanding & Cleaning
+
+
+LAUNCHER_END_V2 RC=0 2026-09-16 04:19:10

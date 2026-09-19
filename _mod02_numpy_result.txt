@@ -1,0 +1,135 @@
+WRAPPER START 2026-09-19 11:46:03
+PY=C:\ai-engineer\venv_bnsp\Scripts\python.exe
+CHECK_IMPORT numpy...
+IMPORT_OK numpy=1.26.4
+SCRIPT_EXISTS_OK = c:\ai-engineer\modul_02_python_ai\01_numpy_fundamental.py
+============================================================
+MODUL 2: PYTHON FOR ARTIFICIAL INTELLIGENCE
+Bagian 1: Fundamental Python & NumPy - Komputasi Numerik
+============================================================
+
+>>> 1. DASAR NUMPY ARRAY
+------------------------------------------------------------
+List Python      : [1, 2, 3, 4, 5] (type: <class 'list'>)
+NumPy Array      : [1 2 3 4 5] (type: <class 'numpy.ndarray'>)
+
+>>> 2. OPERASI ARITMETIK (Vectorization)
+------------------------------------------------------------
+a = [10 20 30 40]
+b = [1 2 3 4]
+a + b  = [11 22 33 44]
+a - b  = [ 9 18 27 36]
+a * b  = [ 10  40  90 160]
+a / b  = [10. 10. 10. 10.]
+a ** 2 = [ 100  400  900 1600]
+np.sin(a) (radian) = [-0.544   0.9129 -0.988   0.7451]
+
+>>> 3. MULTIDIMENSIONAL ARRAY
+------------------------------------------------------------
+Matriks 3x3:
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+
+Shape   : (3, 3)
+Dim     : 2
+Size    : 9
+Dtype   : int32
+
+>>> 4. INDEXING & SLICING
+------------------------------------------------------------
+Data lengkap  : [100 200 300 400 500 600 700 800 900]
+Index ke-0    : 100
+Index ke-(-1) : 900
+Slicing 2:5   : [300 400 500]
+Slicing :5    : [100 200 300 400 500]
+Slicing ::2   : [100 300 500 700 900]
+Boolean mask (data > 500): [600 700 800 900]
+
+>>> 5. STATISTIK DASAR
+------------------------------------------------------------
+Nilai siswa: [75 80 90 65 85 95 70 88 92 60]
+Rata-rata (Mean)     : 80.00
+Median               : 82.50
+Nilai Max            : 95
+Nilai Min            : 60
+Standard Deviasi     : 11.44
+Variance             : 130.80
+Sum Total            : 800
+
+>>> 6. ARRAY BUILT-IN FUNCTION
+------------------------------------------------------------
+np.zeros(5)    : [0. 0. 0. 0. 0.]
+np.ones(5)     : [1. 1. 1. 1. 1.]
+np.arange(10)  : [0 1 2 3 4 5 6 7 8 9]
+np.arange(0, 10, 2): [0 2 4 6 8]
+np.linspace(0, 1, 5): [0.   0.25 0.5  0.75 1.  ]
+np.random.rand(4)   : [0.959 0.908 0.391 0.38 ]
+np.random.randint(1, 100, 5): [87 60 61 94 64]
+
+>>> 7. BROADCASTING
+------------------------------------------------------------
+Skor Matematika, Fisika, Kimia untuk 4 siswa:
+[[80 75 90]
+ [85 88 92]
+ [70 65 78]
+ [90 95 88]]
+
+Dikali bobot [2, 2, 1]:
+[[160 150  90]
+ [170 176  92]
+ [140 130  78]
+ [180 190  88]]
+
+Total skor per siswa: [400 438 348 458]
+Ranking (argsort): [3 1 0 2]
+
+>>> 8. RESHAPE & MANIPULASI DIMENSI
+------------------------------------------------------------
+Flat (12 elemen): [ 1  2  3  4  5  6  7  8  9 10 11 12]
+
+Reshape 3x4:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+
+Transpose (4x3):
+[[ 1  5  9]
+ [ 2  6 10]
+ [ 3  7 11]
+ [ 4  8 12]]
+
+Flatten kembali: [ 1  2  3  4  5  6  7  8  9 10 11 12]
+
+>>> LATIHAN PRAKTIK (Coba lakukan sendiri!)
+------------------------------------------------------------
+
+1. Buat array 1-D dengan 20 angka acak 1-100
+2. Hitung mean, median, dan standar deviasi
+3. Filter angka yang GENAP SAJA
+4. Reshape jadi 4x5 matrix
+5. Hitung rata-rata tiap BARIS dan tiap KOLOM
+
+Jawaban No.1 - Array acak: [ 7 25 65 24 95  4  1 74 43 26 10 33 23  1 79 17 74 61 26 66]
+
+Jawaban No.2:
+  Mean    : 37.70
+  Median  : 26.00
+  Std Dev : 28.78
+
+Jawaban No.3 - Angka genap: [24  4 74 26 10 74 26 66]
+
+Jawaban No.4 - Reshape 4x5:
+[[ 7 25 65 24 95]
+ [ 4  1 74 43 26]
+ [10 33 23  1 79]
+ [17 74 61 26 66]]
+
+Jawaban No.5:
+  Rata-rata per baris : [43.2 29.6 29.2 48.8]
+  Rata-rata per kolom : [ 9.5  33.25 55.75 23.5  66.5 ]
+
+✓ Bagian 1 Modul 2 Selesai: NumPy Fundamental
+
+
+WRAPPER_END RC=0 2026-09-19 11:46:05

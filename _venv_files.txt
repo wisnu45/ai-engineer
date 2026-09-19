@@ -1,0 +1,28 @@
+Total 26 files in c:\ai-engineer\venv_bnsp\Scripts
+================================================================================
+FILE | Activate.ps1                             |     24,167 bytes
+FILE | activate                                 |      2,074 bytes
+FILE | activate.bat                             |      1,003 bytes
+FILE | deactivate.bat                           |        393 bytes
+FILE | debugpy-adapter.exe                      |    108,404 bytes
+FILE | debugpy.exe                              |    108,398 bytes
+FILE | fonttools.exe                            |    108,398 bytes
+FILE | ipython.exe                              |    108,405 bytes
+FILE | ipython3.exe                             |    108,405 bytes
+FILE | jupyter-kernel.exe                       |    108,404 bytes
+FILE | jupyter-kernelspec.exe                   |    108,442 bytes
+FILE | jupyter-migrate.exe                      |    108,400 bytes
+FILE | jupyter-run.exe                          |    108,421 bytes
+FILE | jupyter-troubleshoot.exe                 |    108,405 bytes
+FILE | jupyter.exe                              |    108,400 bytes
+FILE | pip.exe                                  |    108,402 bytes
+FILE | pip3.10.exe                              |    108,402 bytes
+FILE | pip3.exe                                 |    108,402 bytes
+FILE | pyftmerge.exe                            |    108,395 bytes
+FILE | pyftsubset.exe                           |    108,396 bytes
+FILE | pygmentize.exe                           |    108,396 bytes
+FILE | python.exe                               |    266,624 bytes
+FILE | pythonw.exe                              |    254,848 bytes
+FILE | send2trash.exe                           |    108,399 bytes
+FILE | ttx.exe                                  |    108,393 bytes
+FILE | wsdump.exe                               |    108,397 bytes

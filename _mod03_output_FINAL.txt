@@ -1,0 +1,23 @@
+======================================================================
+WRAPPER START 2026-09-16 04:16:51
+EXEC PY: C:\ai-engineer\venv_bnsp\Scripts\python.exe
+EXEC SCRIPT: c:\ai-engineer\modul_03_data_prep\01_data_understanding_cleaning.py
+======================================================================
+
+WRAPPER: EXCEPTION DURING EXEC:
+Traceback (most recent call last):
+  File "c:\ai-engineer\modul_03_data_prep\01_data_understanding_cleaning.py", line 7, in <module>
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+AttributeError: 'Both' object has no attribute 'reconfigure'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\ai-engineer\_mod03_WRAPPER_EXEC.py", line 43, in <module>
+    exec(compile(code, SCRIPT, "exec"), {"__name__": "__main__", "__file__": SCRIPT})
+  File "c:\ai-engineer\modul_03_data_prep\01_data_understanding_cleaning.py", line 10, in <module>
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True)
+AttributeError: 'Both' object has no attribute 'buffer'
+
+
+WRAPPER END 2026-09-16 04:16:51

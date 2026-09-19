@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "c:\ai-engineer\modul_03_data_prep\01_data_understanding_cleaning.py", line 71, in <module>
+    df.info(buf=buffer)
+  File "C:\ai-engineer\venv_bnsp\lib\site-packages\pandas\core\frame.py", line 3647, in info
+    info.render(
+  File "C:\ai-engineer\venv_bnsp\lib\site-packages\pandas\io\formats\info.py", line 512, in render
+    printer.to_buffer(buf)
+  File "C:\ai-engineer\venv_bnsp\lib\site-packages\pandas\io\formats\info.py", line 586, in to_buffer
+    fmt.buffer_put_lines(buf, lines)
+  File "C:\ai-engineer\venv_bnsp\lib\site-packages\pandas\io\formats\format.py", line 2058, in buffer_put_lines
+    buf.write("\n".join(lines))
+AttributeError: 'list' object has no attribute 'write'
